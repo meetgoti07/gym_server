@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CkEditorBlog from '../Forms/CkEditor/CkEditorBlog';
-import { Modal, Nav, Tab } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+
+import CkEditorBlog from '../CkEditor/CkEditorBlog';
 
 const AddBlog = () => {
     const [title, setTitle] = useState('');

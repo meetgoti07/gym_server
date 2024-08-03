@@ -1,19 +1,12 @@
 import React, { useState, Fragment } from "react";
-import { Modal , Nav, Tab} from "react-bootstrap";
+import { Nav, Tab} from "react-bootstrap";
 
-// Image
 
-import menus9 from "../../../images/menus/9.png";
-import menus10 from "../../../images/menus/10.png";
-import menus11 from "../../../images/menus/11.png";
-import menus12 from "../../../images/menus/12.png";
-import { Link } from "react-router-dom";
 import DietMenus from "../Gymove/FoodMenu/DietMenus";
 import AddTrainer from "../Gymove/FoodMenu/AddTrainer";
-import { useEffect } from "react";
+
 const FoodMenu = () => {
   const [modalToggle, setModalToggle] = useState(false);
-  const [modalFilter, setModalFilter] = useState(false);
 
 
   
@@ -33,8 +26,7 @@ const FoodMenu = () => {
                           <h4 className="text-black fs-20">Trainers</h4>
                         
                         </div>
-                        
-                         
+                           
                        
                       </div>      
                                 

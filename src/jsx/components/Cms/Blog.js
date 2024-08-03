@@ -1,20 +1,13 @@
+
+import axios from "axios";
 import React, { useState, Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
-import { Modal, Nav, Tab } from "react-bootstrap";
-
-/// Scroll
-import PerfectScrollbar from "react-perfect-scrollbar";
-
-import axios from "axios";
-
+import {Nav} from "react-bootstrap";
 
 const Blog = ({ onClick }) => {
 
 
-    const [modalToggle, setModalToggle] = useState(false);
-    const [modalFilter, setModalFilter] = useState(false);
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
@@ -41,7 +34,7 @@ const Blog = ({ onClick }) => {
 
     const deleteblog = async (blogid) => {
         try {
-            const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/${blogid}`);
+            const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/deleteblog/${blogid}`);
             if (response.status === 200) {
                 window.alert("blog Successfully deleted");
                 window.location.reload();
@@ -95,7 +88,7 @@ const Blog = ({ onClick }) => {
                                                             <span key={tag.trim()} className="badge badge-success light me-1">{tag.trim().slice(1, -1)}</span>
                                                         ))
                                                     ))}
-                                                   </p>
+                                                    </p>
                                                     <p><strong>Comments:</strong> {blog.comments ? blog.comments.length : 0}</p>
                                                     {/* Render blog content without HTML tags */}
                                                     <div dangerouslySetInnerHTML={{ __html: blog.content }}></div>

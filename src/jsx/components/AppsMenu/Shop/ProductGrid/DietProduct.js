@@ -41,7 +41,7 @@ const DietProduct = ({ onClick }) => {
 
   const deleteproduct = async (productid) => {
     try {
-      const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/${productid}`);
+      const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/deleteproduct/${productid}`);
       if (response.status === 200) {
         window.alert("Product Successfully deleted");
         window.location.reload();

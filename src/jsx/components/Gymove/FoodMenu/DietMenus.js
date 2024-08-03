@@ -2,28 +2,12 @@ import React, { useState, Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-import { Modal , Nav, Tab} from "react-bootstrap";
-
-/// Scroll
-import PerfectScrollbar from "react-perfect-scrollbar";
-
-import menus5 from "../../../../images/menus/5.png";
-import menus6 from "../../../../images/menus/6.png";
-import menus7 from "../../../../images/menus/7.png";
-import menus4 from "../../../../images/menus/4.png";
-import avatar34 from "../../../../images/avatar/34.png";
-import avatar31 from "../../../../images/avatar/31.png";
-import avatar32 from "../../../../images/avatar/32.png";
-import avatar33 from "../../../../images/avatar/33.png";
-
 import axios from "axios";
 
 
 const DietMenus = ({ onClick }) => {
 
 
-  const [modalToggle, setModalToggle] = useState(false);
-  const [modalFilter, setModalFilter] = useState(false);
   const [trainers, setTrainers] = useState([]);
 
   useEffect(() => {

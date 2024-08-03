@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { Modal , Nav, Tab} from "react-bootstrap";
+import {Nav, Tab} from "react-bootstrap";
 
 // Image
 

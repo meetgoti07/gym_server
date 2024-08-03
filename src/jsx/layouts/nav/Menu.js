@@ -29,15 +29,7 @@ export const MenuList = [
             {
                 title: 'Trainers',
                 to: 'trainers',
-            },
-            // {
-            //     title: 'Personal Record',
-            //     to: 'personal-record',
-            // },
-            {
-                title: 'Users',
-                to: 'task',
-            },              
+            }             
         ],
     },
     
@@ -122,26 +114,6 @@ export const MenuList = [
                 ],
             },
         ],
-    },
-    {
-        title:'Icons',
-        to:'flat-icons',
-        update : "NEW", 
-        iconStyle : <i className="flaticon-381-compact-disc-1" />,
-        content : [
-            {
-                title:'Flaticons',
-                to:'flat-icons'
-            },
-            {
-                title:'SVG Icons',
-                to:'svg-icons'
-            },
-            {
-                title:'Feather Icons',
-                to:'feather'
-            }
-        ]
     },
     //CMS
     {

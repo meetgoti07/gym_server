@@ -7,7 +7,6 @@ import {MenuList} from './Menu';
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
 /// Link
 
-import calimg from './../../../images/calendar.png';
 
 const reducer = (previousState, updatedState) => ({
   ...previousState,
@@ -148,23 +147,6 @@ const SideBar = () => {
                   }
               })} 
             </ul>
-            <div className="add-menu-sidebar">
-              <img src={calimg} alt="" className="me-3" />
-              <Link to={"/workoutplan"} className="font-w500 mb-0">Create Workout Plan Now</Link>
-            </div>
-            <div className="copyright">
-              <p>
-                <strong>Gymove Fitness Admin Dashboard</strong> © {d.getFullYear()} All
-                Rights Reserved
-              </p>
-              <p>
-                Made with{" "}
-                <span className={`heart`}
-                  onClick={(e)=>e.target.classList.toggle('heart-blast')}
-                ></span>{" "}
-                by DexignZone
-              </p>
-            </div>
         </div>
       </div>
     );

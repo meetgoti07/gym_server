@@ -81,7 +81,7 @@ const ContentAdd = () => {
 if(response.status===201)
 {
     window.alert('Inventory added successfully');
-    window.location.href='/content'
+    window.location.href='/admin'
 }
 
         } catch (error) {
