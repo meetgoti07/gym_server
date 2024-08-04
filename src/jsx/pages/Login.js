@@ -1,35 +1,27 @@
-import React, { useState, useContext } from 'react'
-// import { connect, useDispatch } from 'react-redux';
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import axios from 'axios';
-// import { loadingToggleAction,loginAction,
-// } from '../../store/actions/AuthActions';
-
-// image
-//import logo from "../../images/logo-full.png";
-import logo from "../../images/logo.png";
-import logoText from "../../images/logo-text.png";
 import loginbg from "../../images/pic1.png";
 
 function Login(props) {
+
 	const [email, setEmail] = useState('harshdob937@gmail.com');
 	let errorsObj = { email: '', password: '' };
 	const [errors, setErrors] = useState(errorsObj);
 	const [password, setPassword] = useState('harsh@123');
 	const navigate = useNavigate();
-	// const dispatch = useDispatch();
+
 
 	const onLogin = async (e) => {
 		e.preventDefault();
-
-		// Validation logic (you can customize this)
 		if (!email || !password) {
 			setErrors({ email: 'Please fill all the fields', password: '' });
 			return;
 		}
 
 		try {
+
 			const postData = {
 				email,
 				password,
@@ -37,21 +29,15 @@ function Login(props) {
 
 			const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signin`, postData);
 
-			// Handle the response from the server
 			console.log(response?.data);
-
-			// Assuming you have a function to set success message
-			// props.setSuccessMessage(response.message);
-
-			// Redirect or do other actions upon successful registration
 
 			localStorage.setItem('token', response?.data.token);
 			localStorage.setItem('name', response?.data.adminName);
 			localStorage.setItem('id', response?.data.adminId);
 			navigate('/dashboard', { replace: true });
-
-		} catch (error) {
-			// Handle errors from the server
+		}
+		catch (error) {
+	
 			console.error('Login failed:', error.response.data);
 			window.alert('login Failed')
 			setErrors({ email: '', password: error.response.data.error });
@@ -62,12 +48,7 @@ function Login(props) {
 		<div className="authincation d-flex flex-column flex-lg-row flex-column-fluid">
 			<div className="login-aside text-center  d-flex flex-column flex-row-auto">
 				<div className="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
-					<div className="text-center mb-4 pt-5 brand-logo">
-						<img className="logo-abbr me-1" src={logo} alt="" width="80" />
-						<img className="brand-title ms-2" src={logoText} alt="" width="108" />
-					</div>
 					<h3 className="mb-2">Welcome back!</h3>
-					<p>User Experience & Interface Design <br />Strategy SaaS Solutions</p>
 				</div>
 				<div className="aside-image" style={{ backgroundImage: "url(" + loginbg + ")" }}></div>
 			</div>
@@ -141,11 +122,4 @@ function Login(props) {
 	);
 };
 
-// const mapStateToProps = (state) => {
-//     return {
-//         errorMessage: state.auth.errorMessage,
-//         successMessage: state.auth.successMessage,
-//         showLoading: state.auth.showLoading,
-//     };
-// };
 export default Login;
